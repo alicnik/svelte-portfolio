@@ -2,7 +2,7 @@
 	import Router from 'svelte-spa-router';
 	import Footer from './components/Footer.svelte';
 	import Header from './components/Header.svelte';
-	import { routes } from './routes';
+	import routes from './routes';
 </script>
 
 <style>
@@ -23,7 +23,7 @@
 		min-height: 100vh;
 		background-color: var(--dark-bg);
 		display: grid;
-		grid-template-columns: minmax(250px, 15vw) 85vw;
+		grid-template-columns: minmax(300px, 15vw) 85vw;
 		grid-template-rows: 90vh 10vh;
 	}
 </style>

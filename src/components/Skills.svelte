@@ -1,5 +1,8 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import TagCloud from './TagCloud.svelte';
 </script>
 
-<TagCloud />
+<section in:fade>
+	<TagCloud />
+</section>

@@ -1,12 +1,15 @@
 <script>
 	import { link } from 'svelte-spa-router';
+	import active from 'svelte-spa-router/active.js';
 
-	let current = 0;
+	const routes = ['about', 'skills', 'projects', 'contact'];
 </script>
 
 <style>
 	nav {
 		width: 100%;
+		flex: 1;
+		padding-top: 5rem;
 	}
 
 	li {
@@ -42,7 +45,7 @@
 		width: 100%;
 	}
 
-	a.selected::after {
+	:global(a.active::after) {
 		width: 100%;
 		top: 50%;
 		transform: translateY(-50%);
@@ -53,7 +56,8 @@
 
 <nav>
 	<ul>
-		<li><a href="/about" use:link on:click={() => (current = 0)}>About</a></li>
-		<li><a href="/skills" use:link on:click={() => (current = 1)}>Skills</a></li>
+		{#each routes as route}
+			<li><a href={`/${route}`} use:link use:active>{route}</a></li>
+		{/each}
 	</ul>
 </nav>

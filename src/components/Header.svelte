@@ -9,10 +9,10 @@
 		grid-row: 1 / 3;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		align-items: center;
 		background-color: rgb(240, 239, 233);
-		padding: 2rem;
+		padding: 0.5rem 2rem 1.5rem;
 	}
 </style>
 
