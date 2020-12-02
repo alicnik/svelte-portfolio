@@ -1,0 +1,23 @@
+<script>
+	import Logo from './Logo.svelte';
+	import Nav from './Nav.svelte';
+	import Social from './Social.svelte';
+</script>
+
+<style>
+	header {
+		grid-row: 1 / 3;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		background-color: rgb(240, 239, 233);
+		padding: 2rem;
+	}
+</style>
+
+<header>
+	<Logo />
+	<Nav />
+	<Social />
+</header>
