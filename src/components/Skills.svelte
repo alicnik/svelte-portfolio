@@ -3,6 +3,15 @@
 	import TagCloud from './TagCloud.svelte';
 </script>
 
-<section in:fade>
+<style>
+	section {
+		height: 100%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+</style>
+
+<section id="skills" in:fade>
 	<TagCloud />
 </section>

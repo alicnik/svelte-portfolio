@@ -19,5 +19,6 @@
 	}
 </style>
 
-<a style="--hover-color: {hoverColour}" {href} target="_blank" rel="nofollow noopener"><Icon
-		{icon} /></a>
+<a style="--hover-color: {hoverColour}" {href} target="_blank" rel="nofollow noopener">
+	<Icon {icon} />
+</a>

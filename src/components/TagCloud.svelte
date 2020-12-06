@@ -26,7 +26,6 @@
 
 	onMount(() => {
 		const tagCloud = TagCloud(container, texts, options);
-		console.log(tagCloud);
 		return () => tagCloud.destroy();
 	});
 </script>

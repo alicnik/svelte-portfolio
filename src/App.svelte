@@ -11,19 +11,21 @@
 	:global(:root) {
 		--dark-bg: #1f2124;
 		--dark-text: #1f2124;
+		--raleway: 'Raleway', sans-serif;
 	}
 
 	:global(*) {
 		padding: 0;
 		margin: 0;
 		box-sizing: border-box;
+		font-family: var(--raleway);
 	}
 
 	:global(body) {
 		min-height: 100vh;
 		background-color: var(--dark-bg);
 		display: grid;
-		grid-template-columns: minmax(300px, 15vw) 85vw;
+		grid-template-columns: minmax(300px, 15vw) auto;
 		grid-template-rows: 90vh 10vh;
 	}
 </style>
