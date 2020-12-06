@@ -11,7 +11,7 @@
 	:global(:root) {
 		--dark-bg: #1f2124;
 		--dark-text: #1f2124;
-		--raleway: 'Raleway', sans-serif;
+		--raleway: 'Raleway', Arial, sans-serif;
 	}
 
 	:global(*) {
@@ -22,7 +22,7 @@
 	}
 
 	:global(body) {
-		min-height: 100vh;
+		height: 100vh;
 		background-color: var(--dark-bg);
 		display: grid;
 		grid-template-columns: minmax(300px, 15vw) auto;
