@@ -1,9 +1,10 @@
 <script>
+    import type { IconDefinition } from "@fortawesome/fontawesome-common-types";
     import Icon from "fa-svelte";
 
-    export let href;
-    export let icon;
-    export let hoverColour = "#24292e";
+    export let href: string;
+    export let icon: IconDefinition;
+    export let hoverColour: string = "#24292e";
 </script>
 
 <style>

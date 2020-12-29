@@ -1,8 +1,23 @@
 <script>
     import { faCode } from "@fortawesome/free-solid-svg-icons";
     import Icon from "fa-svelte";
+    import { onMount } from "svelte";
+    import CodeMirror from "../lib/codeMirror";
 
     let expanded = false;
+    let editor: HTMLTextAreaElement;
+
+    onMount(() => {
+        let codeMirror = CodeMirror.fromTextArea(editor, {
+            mode: "htmlmixed",
+            theme: "dracula darcula",
+            value: "function myScript(){return 100;}\n",
+            lineNumbers: true,
+            indentWithTabs: true,
+            lineWrapping: true,
+            readOnly: true,
+        });
+    });
 </script>
 
 <style>
@@ -25,6 +40,7 @@
     header {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 1rem;
     }
 
     :global(.icon) {
@@ -45,4 +61,5 @@
             <Icon class="icon" icon={faCode} />
         </div>
     </header>
+    <textarea bind:this={editor} />
 </aside>

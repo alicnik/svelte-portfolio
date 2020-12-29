@@ -3,7 +3,7 @@ const autoPreprocess = require('svelte-preprocess');
 module.exports = {
 	preprocess: autoPreprocess({
 		defaults: {
-			script: 'javascript',
+			script: 'typescript',
 			style: 'scss',
 		},
 	}),

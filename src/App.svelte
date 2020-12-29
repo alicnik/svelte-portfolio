@@ -19,7 +19,6 @@
         padding: 0;
         margin: 0;
         box-sizing: border-box;
-        font-family: var(--raleway);
     }
 
     :global(body) {
@@ -28,6 +27,7 @@
         display: grid;
         grid-template-columns: minmax(300px, 15vw) auto;
         grid-template-rows: 95.5vh auto;
+        font-family: var(--raleway);
     }
 
     main {
