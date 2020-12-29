@@ -6,6 +6,7 @@
 
     let expanded = false;
     let editor: HTMLTextAreaElement;
+    export let value: string;
 
     onMount(() => {
         let codeMirror = CodeMirror.fromTextArea(editor, {
@@ -29,7 +30,7 @@
         left: 0;
         bottom: 0;
         transition: 1.1s cubic-bezier(0.5, 0, 0.5, 1);
-        padding: 7px 2rem 0;
+        padding: 7px 2rem;
     }
 
     .expanded {
@@ -39,13 +40,16 @@
 
     header {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
+        align-items: center;
         margin-bottom: 1rem;
+        cursor: pointer;
     }
 
     :global(.icon) {
         font-size: 1.5rem;
         transition: 0.2s ease;
+        margin-left: 0.5rem;
 
         &:hover {
             transform: scale(1.2);
@@ -55,11 +59,11 @@
 </style>
 
 <aside class:expanded>
-    <header>
-        Click here to see this page's code &#8594;
-        <div on:click={() => (expanded = !expanded)}>
-            <Icon class="icon" icon={faCode} />
-        </div>
+    <header on:click={() => (expanded = !expanded)}>
+        Click here to
+        {expanded ? 'hide' : 'see'}
+        this page's code &#8594;
+        <Icon class="icon" icon={faCode} />
     </header>
-    <textarea bind:this={editor} />
+    <textarea bind:this={editor} bind:value />
 </aside>
