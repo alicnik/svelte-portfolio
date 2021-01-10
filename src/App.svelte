@@ -6,11 +6,12 @@
 </script>
 
 <style>
-    @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,900;1,900&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;900&display=swap");
 
     :global(:root) {
         --dark-bg: #1f2124;
         --dark-text: #1f2124;
+        --off-white: #eeeeee;
         --raleway: "Raleway", Arial, sans-serif;
     }
 

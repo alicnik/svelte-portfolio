@@ -1,31 +1,61 @@
 <script>
     import { fade } from "svelte/transition";
+    import profilePhoto from "../assets/images/profile-photo.jpg";
     import Editor from "./Editor.svelte";
+    import { aboutCode as value } from "../assets/codeValues";
 </script>
 
 <style>
-    section {
+    section#about {
         height: 100%;
         display: flex;
         justify-content: space-around;
         align-items: center;
+        color: var(--off-white);
     }
 
     article {
-        width: 50%;
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+
+        div.content {
+            max-width: 422px;
+            padding: 0 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            color: white;
+            font-size: 1.1rem;
+            line-height: 1.5rem;
+        }
+    }
+
+    figure {
+        img {
+            width: clamp(200px, 30vw, 400px);
+            outline: 1px solid white;
+            outline-offset: 3px;
+        }
     }
 </style>
 
-<section id="about" in:fade>
+<section id="about" transition:fade>
     <article>
-        <h2>About me</h2>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. At suscipit
-            soluta voluptatum sint vero tenetur aut consectetur enim quis
-            consequuntur hic exercitationem iusto voluptate laudantium
-            repudiandae ducimus quos necessitatibus nisi eum corporis rem velit
-            illum, eius dignissimos. Ullam, impedit.
-        </p>
+        <figure>
+            <img src={profilePhoto} alt="Alex Nicholas headshot" />
+            <figcaption>Alex Nicholas</figcaption>
+        </figure>
+        <div class="content">
+            <p>
+                I have a natural affinity for solving computing problems with a
+                high degree of both tenacity and resourcefulness. Combining a
+                master’s degree in International Business Law with experience in
+                client-facing luxury service industries, I am able to deliver
+                logical and innovative solutions that prioritise user
+                experience.
+            </p>
+        </div>
     </article>
 </section>
-<Editor value="Hello, About!" />
+<Editor {value} />
