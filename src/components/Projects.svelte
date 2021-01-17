@@ -2,6 +2,7 @@
 	import { fade } from 'svelte/transition';
 	import Editor from './Editor.svelte';
 	import { projectList } from '../assets/project-list';
+	import { projectCode } from '../assets/codeValues';
 </script>
 
 <section id="projects" transition:fade>
@@ -19,7 +20,7 @@
 		</div>
 	{/each}
 </section>
-<Editor value="Hello Projects!" />
+<Editor value={projectCode} />
 
 <style>
 	section {

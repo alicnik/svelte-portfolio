@@ -7,7 +7,8 @@
 .cm-s-material-palenight.CodeMirror {
 	background-color: #292d3e;
 	color: #a6accd;
-	/* height: auto; */
+	height: 80vh;
+	overflow-y: auto;
 }
 
 .cm-s-material-palenight .CodeMirror-gutters {
