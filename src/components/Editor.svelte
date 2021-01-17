@@ -43,6 +43,7 @@
 		transition: 1.1s cubic-bezier(0.5, 0, 0.5, 1);
 		padding: 7px 2rem;
 		box-shadow: 0 -10px 10px 2px var(--dark-bg);
+		z-index: 9999;
 	}
 
 	.expanded {
