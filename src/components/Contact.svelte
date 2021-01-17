@@ -20,6 +20,7 @@
 		message: false,
 	};
 	let success = false;
+	const isMobile = window.innerWidth <= 414;
 
 	init('user_Iusuy42LIpjSZSX8bT4a5');
 
@@ -99,7 +100,7 @@
 				id="message"
 				name="message"
 				bind:value={message}
-				rows="5"
+				rows={isMobile ? 2 : 5}
 				required={touched.message}
 			/>
 		</label>
@@ -129,6 +130,18 @@
 			text-transform: uppercase;
 			font-style: italic;
 			margin-bottom: 2rem;
+		}
+
+		@media only screen and (max-width: 414px) {
+			padding: 2rem;
+			overflow-y: auto;
+			height: 90vh;
+
+			h2 {
+				margin-bottom: 0;
+				font-size: 3.3rem;
+				padding-left: 1rem;
+			}
 		}
 	}
 	form {
@@ -169,6 +182,10 @@
 				transform: scale(1.03);
 			}
 		}
+
+		@media only screen and (max-width: 414px) {
+			height: 350px;
+		}
 	}
 
 	.success {
@@ -178,7 +195,16 @@
 
 	div.direct-contact {
 		padding-top: 1rem;
+
+		p,
+		address {
+			display: inline;
+		}
+		@media only screen and (max-width: 414px) {
+			padding-left: 1rem;
+		}
 	}
+
 	a {
 		color: var(--off-white);
 	}

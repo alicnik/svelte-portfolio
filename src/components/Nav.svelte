@@ -18,6 +18,11 @@
 		width: 100%;
 		flex: 1;
 		padding-top: 5rem;
+
+		@media only screen and (max-width: 414px) {
+			padding-top: 2rem;
+			margin-bottom: 2rem;
+		}
 	}
 
 	li {

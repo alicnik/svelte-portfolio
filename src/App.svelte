@@ -30,15 +30,16 @@
 		background-color: var(--dark-bg);
 		display: flex;
 		font-family: var(--raleway);
-	}
 
-	header {
-		width: minmax(300px, 15vw);
+		@media only screen and (max-width: 414px) {
+			flex-direction: column;
+		}
 	}
 
 	main {
 		position: relative;
 		overflow: hidden;
 		width: 100%;
+		height: 100%;
 	}
 </style>

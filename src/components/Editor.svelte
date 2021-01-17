@@ -44,6 +44,11 @@
 		padding: 7px 2rem;
 		box-shadow: 0 -10px 10px 2px var(--dark-bg);
 		z-index: 9999;
+
+		@media only screen and (max-width: 414px) {
+			height: 5vh;
+			top: 85vh;
+		}
 	}
 
 	.expanded {
@@ -58,6 +63,13 @@
 		margin-bottom: 2rem;
 		cursor: pointer;
 		color: var(--off-white);
+		background: var(--dark-bg);
+
+		@media only screen and (max-width: 414px) {
+			font-size: 0.9rem;
+			margin-bottom: 0;
+			padding-bottom: 2rem;
+		}
 	}
 
 	:global(.icon) {

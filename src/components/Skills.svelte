@@ -28,12 +28,13 @@
 		'Jest',
 		'React Testing Library',
 	];
-	const options = {
-		radius: 300,
-		maxSpeed: 'slow',
-	};
 
 	onMount(() => {
+		const isMobile = window.innerWidth <= 414;
+		const options = {
+			radius: isMobile ? 180 : 300,
+			maxSpeed: 'slow',
+		};
 		const tagCloud = TagCloud(container, texts, options);
 		return () => tagCloud.destroy();
 	});
@@ -65,6 +66,10 @@
 		justify-content: center;
 		color: var(--off-white);
 		overflow-y: auto;
+
+		@media only screen and (max-width: 414px) {
+			height: 82vh;
+		}
 	}
 
 	article {
@@ -78,6 +83,10 @@
 			font-size: 1.1rem;
 			margin: 1rem;
 			text-align: center;
+		}
+
+		@media only screen and (max-width: 414px) {
+			width: 85%;
 		}
 	}
 

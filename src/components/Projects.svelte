@@ -34,6 +34,10 @@
 		align-items: center;
 		justify-content: space-evenly;
 		margin-bottom: 2rem;
+
+		@media only screen and (max-width: 414px) {
+			flex-direction: column;
+		}
 	}
 
 	.slide-text {
@@ -49,11 +53,20 @@
 			display: inline-block;
 			color: var(--off-white);
 		}
+
+		@media only screen and (max-width: 414px) {
+			width: 80vw;
+		}
 	}
 
 	.slide-image {
 		width: 40vw;
 		border-radius: 10px;
 		overflow: hidden;
+
+		@media only screen and (max-width: 414px) {
+			width: 80vw;
+			margin-bottom: 1rem;
+		}
 	}
 </style>

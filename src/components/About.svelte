@@ -25,7 +25,7 @@
 
 <style>
 	section#about {
-		height: 95vh;
+		height: 100%;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
@@ -38,6 +38,7 @@
 		width: 85%;
 		display: flex;
 		justify-content: space-between;
+		overflow-y: auto;
 
 		div.content {
 			max-width: 422px;
@@ -48,6 +49,19 @@
 			color: var(--off-white);
 			font-size: 1.1rem;
 			line-height: 1.5rem;
+		}
+
+		@media only screen and (max-width: 414px) {
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+			padding: 3rem 0 0;
+			height: 90vh;
+			gap: 2rem;
+
+			div.content {
+				padding-bottom: 0;
+			}
 		}
 	}
 
