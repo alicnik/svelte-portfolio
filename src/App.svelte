@@ -28,15 +28,17 @@
 	:global(body) {
 		height: 100vh;
 		background-color: var(--dark-bg);
-		display: grid;
-		grid-template-columns: minmax(300px, 15vw) auto;
-		grid-template-rows: 100vh;
+		display: flex;
 		font-family: var(--raleway);
+	}
+
+	header {
+		width: minmax(300px, 15vw);
 	}
 
 	main {
 		position: relative;
 		overflow: hidden;
-		height: 97vh;
+		width: 100%;
 	}
 </style>

@@ -35,7 +35,7 @@
 <style>
 	aside {
 		position: absolute;
-		top: 97.5vh;
+		top: 93vh;
 		background: var(--dark-bg);
 		right: 0;
 		left: 0;

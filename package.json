@@ -1,4 +1,5 @@
 {
+	"homepage": "https://alexnicholas.dev",
 	"scripts": {
 		"start": "snowpack dev",
 		"build": "snowpack build",

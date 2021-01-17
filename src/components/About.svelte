@@ -25,7 +25,7 @@
 
 <style>
 	section#about {
-		height: 100%;
+		height: 95vh;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;

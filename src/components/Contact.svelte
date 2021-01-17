@@ -117,10 +117,11 @@
 <style>
 	section {
 		color: var(--off-white);
-		padding: 7rem 10rem;
+		padding: 3rem 10rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		overflow-y: auto;
 
 		h2 {
 			font-size: 4rem;
@@ -132,7 +133,7 @@
 	}
 	form {
 		display: flex;
-		width: clamp(300px, 20vw, 600px);
+		width: clamp(300px, 25vw, 600px);
 		flex-direction: column;
 		justify-content: space-around;
 		height: 500px;
@@ -176,7 +177,7 @@
 	}
 
 	div.direct-contact {
-		padding-top: 2rem;
+		padding-top: 1rem;
 	}
 	a {
 		color: var(--off-white);

@@ -1,27 +1,333 @@
-export const aboutCode = `<script>\r\n    import { fade } from \"svelte\/transition\";\r\n    import profilePhoto from \"..\/assets\/images\/profile-photo.jpg\";\r\n    import Editor from \".\/Editor.svelte\";\r\n<\/script>\r\n\r\n<style>\r\n    section#about {\r\n        height: 100%;\r\n        display: flex;\r\n        justify-content: space-around;\r\n        align-items: center;\r\n        color: var(--off-white);\r\n    }\r\n\r\n    article {\r\n        width: 70%;\r\n        display: flex;\r\n        justify-content: space-evenly;\r\n\r\n        div.content {\r\n            max-width: 422px;\r\n            padding: 0 2rem 2rem;\r\n            display: flex;\r\n            flex-direction: column;\r\n            justify-content: space-around;\r\n            color: white;\r\n        }\r\n    }\r\n\r\n    figure {\r\n        img {\r\n            width: clamp(200px, 30vw, 400px);\r\n            outline: 1px solid white;\r\n            outline-offset: 3px;\r\n        }\r\n    }\r\n<\/style>\r\n\r\n<section id=\"about\" in:fade>\r\n    <article>\r\n        <figure>\r\n            <img src={profilePhoto} alt=\"Alex Nicholas headshot\" \/>\r\n            <figcaption>Alex Nicholas<\/figcaption>\r\n        <\/figure>\r\n        <div class=\"content\">\r\n            <p>\r\n                I have a natural affinity for solving computing problems with a\r\n                high degree of both tenacity and resourcefulness. Combining a\r\n                master\u2019s degree in International Business Law with experience in\r\n                client-facing luxury service industries, I am able to deliver\r\n                logical and innovative solutions that prioritise user\r\n                experience.\r\n            <\/p>\r\n            <p>\r\n                I am driven to actively seek out and resolve inefficiencies and\r\n                am an advocate of automation and collaborative working\r\n                technologies. As a graduate of the Software Engineering\r\n                Immersive coding boot camp at General Assembly, I am now ready\r\n                to move forward and thrive in a workplace characterised by bold\r\n                ambition and outstanding achievement where growth and learning\r\n                are among the core values of the business.\r\n            <\/p>\r\n        <\/div>\r\n    <\/article>\r\n<\/section>`;
-
-export const skillsCode = `<script>\r\n    import { onMount } from \"svelte\";\r\n    import { fade } from \"svelte\/transition\";\r\n    import TagCloud from \"TagCloud\";\r\n    import Editor from \".\/Editor.svelte\";\r\n\r\n    const container = \".cloud\";\r\n    const texts = [\r\n        \"HTML\",\r\n        \"CSS\",\r\n        \"JavaScript\",\r\n        \"TypeScript\",\r\n        \"React\",\r\n        \"Svelte\",\r\n        \"Docker\",\r\n        \"Azure DevOps\",\r\n        \"Sass\",\r\n        \"Node.js\",\r\n        \"Express\",\r\n        \"MongoDB\",\r\n        \"Mongoose\",\r\n        \"Python\",\r\n        \"Flask\",\r\n        \"PostgreSQL\",\r\n        \"Git\",\r\n        \"Snowpack\",\r\n        \"Jest\",\r\n        \"React Testing Library\",\r\n    ];\r\n    const options = {\r\n        radius: 200,\r\n        maxSpeed: \"slow\",\r\n    };\r\n\r\n    onMount(() => {\r\n        const tagCloud = TagCloud(container, texts, options);\r\n        return () => tagCloud.destroy();\r\n    });\r\n<\/script>\r\n\r\n<style>\r\n    section {\r\n        height: 100%;\r\n        display: flex;\r\n        justify-content: space-around;\r\n        align-items: center;\r\n        color: var(--off-white);\r\n    }\r\n\r\n    div.cloud {\r\n        cursor: default;\r\n    }\r\n<\/style>\r\n\r\n<section id=\"skills\" in:fade>\r\n    <article>\r\n        <p>\r\n            While I am perhaps most at home on the front end, I prefer to take a\r\n            holistic approach to projects, understanding the entire architecture\r\n            and developing confidence in all areas of the codebase. Accordingly,\r\n            I have built a range of skills to ensure that I am well positioned\r\n            to improve upon and debug any part of an application.\r\n        <\/p>\r\n\r\n        <p>\r\n            I am constantly on the lookout for new ways to hone and improve my\r\n            skills, as well as new languages and frameworks to learn. I used\r\n            this website as an opportunity to learn Svelte; you can see the code\r\n            by clicking on the banner towards the bottom of the page.\r\n        <\/p>\r\n    <\/article>\r\n    <div class=\"cloud\" \/>\r\n<\/section>`;
-
-export const contactCode = `<script>
-    import Editor from "./Editor.svelte";
+export const aboutCode = `<script>
+import { fade } from 'svelte/transition';
+import profilePhoto from '../assets/images/profile-photo.jpg';
+import Editor from './Editor.svelte';
+import { aboutCode as value } from '../assets/codeValues';
 </script>
 
+<section id="about" transition:fade>
+<article>
+    <figure>
+        <img src={profilePhoto} alt="Alex Nicholas headshot" />
+        <figcaption>Alex Nicholas</figcaption>
+    </figure>
+    <div class="content">
+        <p>
+            I have a natural affinity for solving computing problems with a high degree of both tenacity
+            and resourcefulness. Combining a master’s degree in International Business Law with
+            experience in client-facing luxury service industries, I am able to deliver logical and
+            innovative solutions that prioritise user experience.
+        </p>
+    </div>
+</article>
+</section>
+<Editor {value} />
+
 <style>
-    section {
-        color: var(--off-white);
-    }
-    form {
+section#about {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--off-white);
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+article {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+
+    div.content {
+        max-width: 422px;
+        padding: 0 0 2rem 2rem;
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
+        color: var(--off-white);
+        font-size: 1.1rem;
+        line-height: 1.5rem;
     }
-</style>
+}
 
-<section id="contact">
-    <h2>Contact me</h2>
-    <form>
-        <label for="name">Name<input type="text" /></label>
-        <label for="email">Email address<input type="text" /></label>
-        <label for="message">Message<textarea /></label>
-        <button>Submit</button>
-    </form>
-</section>`;
+figure {
+    img {
+        width: clamp(200px, 30vw, 400px);
+        outline: 1px solid var(--off-white);
+        outline-offset: 3px;
+    }
+}
+</style>`;
+
+export const skillsCode = `<script>
+import { onMount } from 'svelte';
+import { fade } from 'svelte/transition';
+import TagCloud from 'TagCloud';
+import Editor from './Editor.svelte';
+import { skillsCode as value } from '../assets/codeValues';
+
+const container = '.cloud';
+const texts = [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'TypeScript',
+    'React',
+    'Svelte',
+    'Docker',
+    'Azure DevOps',
+    'Sass',
+    'Node.js',
+    'Express',
+    'MongoDB',
+    'Mongoose',
+    'Python',
+    'Flask',
+    'PostgreSQL',
+    'Git',
+    'Snowpack',
+    'Jest',
+    'React Testing Library',
+];
+const options = {
+    radius: 300,
+    maxSpeed: 'slow',
+};
+
+onMount(() => {
+    const tagCloud = TagCloud(container, texts, options);
+    return () => tagCloud.destroy();
+});
+</script>
+
+<section id="skills" transition:fade>
+<article>
+    <div class="cloud" />
+    <p>
+        While I am perhaps most at home on the front end, I take a holistic approach to projects,
+        understanding the entire architecture and developing confidence in all areas of the codebase.
+        Accordingly, I have built a range of skills to ensure that I am well positioned to improve
+        upon and debug any part of an application.
+    </p>
+
+    <p>
+        I am constantly on the lookout for new ways to hone and improve my skills, as well as new
+        languages and frameworks to learn. I used this website as an opportunity to learn Svelte; you
+        can see the code by clicking on the banner towards the bottom of the page.
+    </p>
+</article>
+</section>
+<Editor {value} />
+
+<style>
+section {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    color: var(--off-white);
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+
+    p {
+        font-size: 1.1rem;
+        margin: 1rem;
+        text-align: center;
+    }
+}
+
+div.cloud {
+    cursor: default;
+}
+</style>`;
+
+export const contactCode = `<script>
+import Editor from './Editor.svelte';
+import { contactCode as value } from '../assets/codeValues';
+import { fade } from 'svelte/transition';
+import emailjs, { init } from 'emailjs-com';
+
+interface Touched {
+    [index: string]: boolean;
+    name: boolean;
+    email: boolean;
+    message: boolean;
+}
+
+let name = '';
+let email = '';
+let message = '';
+let touched: Touched = {
+    name: false,
+    email: false,
+    message: false,
+};
+let success = false;
+
+init('user_Iusuy42LIpjSZSX8bT4a5');
+
+function handleBlur(e: FocusEvent) {
+    const input = e.target as HTMLInputElement | HTMLTextAreaElement;
+    if (!input) {
+        return;
+    }
+    touched[input.name] = true;
+}
+
+function handleSubmit(e: Event) {
+    e.preventDefault();
+    if (!touched.name || !touched.email || !touched.message) {
+        setAllTouched(true);
+        return;
+    }
+    emailjs.send('service_364d88k', 'template_49mrezz', { name, email, message }).then(
+        () => {
+            name = '';
+            email = '';
+            message = '';
+            success = true;
+            setAllTouched(false);
+        },
+        (err) => {
+            console.log(err);
+        }
+    );
+}
+
+function handleInput(e: Event) {
+    if (success) {
+        success = false;
+    }
+}
+
+function setAllTouched(value: boolean) {
+    for (const input in touched) {
+        touched[input] = value;
+    }
+}
+</script>
+
+<section id="contact" transition:fade>
+<h2>Get in touch</h2>
+<form on:submit={handleSubmit}>
+    <label for="name">
+        Name
+        <input
+            on:blur={handleBlur}
+            on:input={handleInput}
+            id="name"
+            name="name"
+            bind:value={name}
+            type="text"
+            required={touched.name}
+        />
+    </label>
+    <label for="email">
+        Email address
+        <input
+            on:blur={handleBlur}
+            on:input={handleInput}
+            id="email"
+            name="email"
+            bind:value={email}
+            type="email"
+            required={touched.email}
+        />
+    </label>
+    <label for="message">
+        Message
+        <textarea
+            on:blur={handleBlur}
+            on:input={handleInput}
+            id="message"
+            name="message"
+            bind:value={message}
+            rows="5"
+            required={touched.message}
+        />
+    </label>
+    <button type="submit" disabled={success} class:success>{success ? 'Sent' : 'Submit'}</button>
+</form>
+<div class="direct-contact">
+    <p>Alternatively, you can email me directly at:</p>
+    <address>
+        <a href="mailto:me@alexnicholas.dev">me@alexnicholas.dev</a>
+    </address>
+</div>
+</section>
+<Editor {value} />
+
+<style>
+section {
+    color: var(--off-white);
+    padding: 7rem 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        font-size: 4rem;
+        align-self: flex-start;
+        text-transform: uppercase;
+        font-style: italic;
+        margin-bottom: 2rem;
+    }
+}
+form {
+    display: flex;
+    width: clamp(300px, 20vw, 600px);
+    flex-direction: column;
+    justify-content: space-around;
+    height: 500px;
+
+    label {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 4px;
+    }
+
+    input,
+    textarea {
+        padding: 0.6rem 0.3rem 0.3rem;
+        font-size: 1.1rem;
+        background: none;
+        border: none;
+        border-bottom: 1px solid var(--off-white);
+        color: var(--off-white);
+        font-family: var(--raleway);
+    }
+
+    button {
+        align-self: flex-end;
+        padding: 0.8rem 1.8rem;
+        font-size: 1.1rem;
+        border: 1px solid var(--off-white);
+        background: none;
+        color: var(--off-white);
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:not(.success):hover {
+            transform: scale(1.03);
+        }
+    }
+}
+
+.success {
+    color: rgb(20, 201, 20);
+    border-color: rgb(20, 201, 20);
+}
+
+div.direct-contact {
+    padding-top: 2rem;
+}
+a {
+    color: var(--off-white);
+}
+</style>`;

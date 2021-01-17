@@ -60,17 +60,18 @@
 
 <style>
 	section {
-		height: 100%;
+		height: 90vh;
 		display: flex;
 		justify-content: center;
 		color: var(--off-white);
+		overflow-y: auto;
 	}
 
 	article {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: 60%;
+		width: 65%;
 		height: 100%;
 
 		p {
