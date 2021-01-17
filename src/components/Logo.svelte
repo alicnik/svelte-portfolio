@@ -2,6 +2,8 @@
 	import { link } from 'svelte-spa-router';
 </script>
 
+<a href="/" use:link><h1>AN</h1></a>
+
 <style>
 	a {
 		text-decoration: none;
@@ -16,5 +18,3 @@
 		cursor: pointer;
 	}
 </style>
-
-<a href="/" use:link><h1>AN</h1></a>

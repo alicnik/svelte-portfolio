@@ -5,6 +5,12 @@
 	import IconLink from './IconLink.svelte';
 </script>
 
+<div class="social">
+	<IconLink hoverColour="#586069" href="https://github.com/alicnik" icon={faGithub} />
+	<IconLink hoverColour="#1da1f2" href="https://twitter.com/alicnik" icon={faTwitter} />
+	<IconLink hoverColour="#2867B2" href="https://linkedin.com/in/ajdn" icon={faLinkedinIn} />
+</div>
+
 <style>
 	.social {
 		width: 100%;
@@ -13,9 +19,3 @@
 		align-items: center;
 	}
 </style>
-
-<div class="social">
-	<IconLink hoverColour="#586069" href="https://github.com/alicnik" icon={faGithub} />
-	<IconLink hoverColour="#1da1f2" href="https://twitter.com/alicnik" icon={faTwitter} />
-	<IconLink hoverColour="#2867B2" href="https://linkedin.com/in/ajdn" icon={faLinkedinIn} />
-</div>

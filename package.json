@@ -5,10 +5,12 @@
 		"test": "web-test-runner \"src/**/*.test.ts\""
 	},
 	"dependencies": {
+		"@beyonk/svelte-carousel": "^2.8.0",
 		"@fortawesome/free-brands-svg-icons": "^5.15.1",
 		"@fortawesome/free-solid-svg-icons": "^5.15.1",
 		"TagCloud": "^2.1.0",
 		"codemirror": "^5.59.0",
+		"emailjs-com": "^2.6.4",
 		"svelte": "^3.24.0",
 		"svelte-spa-router": "^3.0.5"
 	},

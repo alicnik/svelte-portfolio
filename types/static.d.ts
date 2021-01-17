@@ -64,3 +64,4 @@ declare module '*.txt' {
 
 declare module 'fa-svelte';
 declare module 'TagCloud';
+declare module '@beyonk/svelte-carousel';
